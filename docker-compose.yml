@@ -10,3 +10,12 @@ services:
       - "3000:3000"
     volumes:
       - ./client:/app
+  server:
+    image: "workshop_server"
+    build:
+      context: server
+    command: poetry run python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
