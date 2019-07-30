@@ -1,21 +1,28 @@
 ---
 version: "3"
 services:
+  nginx:
+    image: "workshop_nginx"
+    build:
+      context: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - app:/usr/share/nginx/app
   client:
     image: "workshop_client"
     build:
       context: client
     command: npm start
-    ports:
-      - "3000:3000"
     volumes:
       - ./client:/app
+      - app:/app/build
   server:
     image: "workshop_server"
     build:
       context: server
     command: poetry run python manage.py runserver 0.0.0.0:8000
-    ports:
-      - "8000:8000"
     volumes:
       - ./server:/app
+volumes:
+  app:
