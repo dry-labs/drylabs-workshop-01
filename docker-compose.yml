@@ -21,3 +21,13 @@ services:
     command: poetry run python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./server:/app
+  postgres:
+    image: "postgres"
+    environment:
+      POSTGRES_USER: server
+      POSTGRES_DB: barbershop
+      POSTGRES_PASSWORD: top_secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
