@@ -1,7 +1,8 @@
 import React from 'react';
+import { Header } from 'semantic-ui-react';
 
 function App() {
-  return <h1>Hello</h1>;
+  return <Header as='h1'>Hello</Header>
 }
 
 export default App;
