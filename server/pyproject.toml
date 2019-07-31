@@ -9,6 +9,10 @@ python = "^3.7"
 Django = "^2.2"
 djangorestframework = "^3.10"
 psycopg2 = "^2.8"
+django-allauth = "^0.39.1"
+django-rest-auth = "^0.9.5"
+drf-yasg = "^1.16"
+packaging = "^19.1"
 
 [tool.poetry.dev-dependencies]
 
