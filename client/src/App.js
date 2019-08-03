@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Container, Menu } from 'semantic-ui-react';
 
+import { SignUpButton } from './components/SignUpButton';
+
 function App() {
   return (
     <Container>
@@ -13,9 +15,12 @@ function App() {
           <Button as='a'>
             Log in
           </Button>
-          <Button as='a' primary style={{ marginLeft: '0.5em' }}>
-            Sign Up
-          </Button>
+          <SignUpButton registrationForm={{
+            username: 'master',
+            password1: 'onion3157',
+            password2: 'onion3157',
+            email: 'master@example.com',
+          }} />
         </Menu.Item>
       </Menu>
     </Container>
