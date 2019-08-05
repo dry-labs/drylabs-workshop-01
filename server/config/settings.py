@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'rest_auth.registration',
     'drf_yasg',
+    'django_extensions',
 ]
 
 SITE_ID = 1
