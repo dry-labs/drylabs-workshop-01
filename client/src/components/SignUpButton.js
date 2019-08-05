@@ -4,8 +4,8 @@ import { Button } from 'semantic-ui-react';
 
 import { authRegistration } from '../queries';
 
-const SignUp = () => (
-  <Button as='a' primary style={{ marginLeft: '0.5em' }}>
+const SignUp = ({ handler }) => (
+  <Button as='a' onClick={handler} primary style={{ marginLeft: '0.5em' }}>
     Sign Up
   </Button>
 );
@@ -18,11 +18,11 @@ const SignUpLoading = () => (
 
 export const SignUpButton = (registrationForm) => (
   <Mutation mutation={authRegistration} variables={registrationForm}>
-    {(loading, error, data) => {
-      if (loading) {
-        return <SignUpLoading />
-      }
-      return <SignUp />
+    {(authRegistration, { loading, data }) => {
+      if (loading) return <SignUpLoading />;
+      if (data) return null;
+
+      return <SignUp handler={authRegistration} />;
     }}
   </Mutation>
 );
