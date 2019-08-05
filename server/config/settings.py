@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'drf_yasg',
     'django_extensions',
+    'user.apps.UserConfig',
 ]
 
 SITE_ID = 1
@@ -113,6 +114,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# REST API
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+REST_SESSION_LOGIN = False
 
 
 # Internationalization
