@@ -11,4 +11,18 @@ mutation authRegistration($registrationForm: Register!) {
       key
     }
 }
-`
+`;
+
+
+export const authLogin = gql`
+mutation authLogin($loginForm: Login!) {
+  login(input: $loginForm)
+    @rest(
+      type: "Login",
+      path: "/auth/login/",
+      method: "POST"
+    ) {
+      key
+    }
+}
+`;
